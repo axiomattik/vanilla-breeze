@@ -1,8 +1,13 @@
 .widget {
 	margin: 0 0 1.5em;
 
+	ul {
+		list-style-type: none;
+	}
+
 	// Make sure select elements fit in widgets.
 	select {
 		max-width: 100%;
 	}
+
 }
