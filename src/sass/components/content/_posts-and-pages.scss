@@ -2,9 +2,15 @@
 	display: block;
 }
 
+.post {
+	border-bottom: solid $color__border 1px;
+	padding: 0 0 1.5rem;
+
+}
+
 .post,
 .page {
-	margin: 0 0 1.5em;
+	margin: 0 0 3em;
 }
 
 .updated:not(.published) {
