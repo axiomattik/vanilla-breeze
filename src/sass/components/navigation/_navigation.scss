@@ -1,12 +1,24 @@
+
 .main-navigation {
 	display: block;
 	width: 100%;
+	border-top: solid $color__border 2px;
+	border-bottom: solid $color__border 2px;
+
+	.menu {
+		margin: 1rem 0;
+
+	}
 
 	ul {
 		display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 2rem;
+		justify-content: space-between;
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);

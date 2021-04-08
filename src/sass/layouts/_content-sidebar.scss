@@ -7,7 +7,14 @@
 }
 
 .site-header {
+	margin-bottom: 1rem;
 
+	.site-branding {
+		margin-bottom: 1rem;
+		p {
+			margin: 0;
+		}
+	}
 }
 
 .site-body { /* wrapper class for site-main and widget-area */
