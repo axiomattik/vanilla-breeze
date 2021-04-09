@@ -9,8 +9,18 @@ h6 {
 	padding: 0;
 
 	a {
+		color: $color__text-main;
 		text-decoration: none;
+
+		&:visited {
+			color: $color__text-main;
+		}
+
+		&:hover {
+			color: $color__text-main;
+		}
 	}
+
 
 }
 

@@ -1,12 +1,12 @@
+.post {
+	border-bottom: solid $color__border 1px;
+	padding: 0 0 1.5rem;
+}
+
 .sticky {
 	display: block;
 }
 
-.post {
-	border-bottom: solid $color__border 1px;
-	padding: 0 0 1.5rem;
-
-}
 
 .post,
 .page {

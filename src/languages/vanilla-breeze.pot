@@ -72,11 +72,11 @@ msgstr ""
 msgid "Add widgets here."
 msgstr ""
 
-#: src/header.php:25
+#: src/header.php:27
 msgid "Skip to content"
 msgstr ""
 
-#: src/header.php:48
+#: src/header.php:50
 msgid "Primary Menu"
 msgstr ""
 
