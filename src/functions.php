@@ -184,3 +184,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Add 'read more' link to excerpts.
+ */
+add_filter( 'excerpt_more', 'vnbt_excerpt_more' );
+function vnbt_excerpt_more( $more ) {
+	if ( ! is_single() ) {
+		$more = sprintf( '... <a class="read-more" href="%1$s">%2$s</a>',
+			get_permalink( get_the_ID() ),
+			__( 'Read More', 'vanilla-breeze' )
+		);
+	}
+	return $more;
+}

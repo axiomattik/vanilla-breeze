@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @packageVanilla_Breeze
+ * @package Vanilla_Breeze
  */
 
 ?>
