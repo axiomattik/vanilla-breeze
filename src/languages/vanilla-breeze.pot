@@ -72,6 +72,10 @@ msgstr ""
 msgid "Add widgets here."
 msgstr ""
 
+#: src/functions.php:196
+msgid "Read More"
+msgstr ""
+
 #: src/header.php:27
 msgid "Skip to content"
 msgstr ""
@@ -148,6 +152,10 @@ msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
 
+#: src/template-parts/content-excerpt.php:33, src/template-parts/content-page.php:25, src/template-parts/content.php:53
+msgid "Pages:"
+msgstr ""
+
 #: src/template-parts/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
@@ -162,10 +170,6 @@ msgstr ""
 
 #: src/template-parts/content-none.php:24
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: src/template-parts/content-page.php:25, src/template-parts/content.php:53
-msgid "Pages:"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers

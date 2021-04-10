@@ -25,14 +25,17 @@ if ( ! function_exists( 'vnbt_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'vanilla-breeze' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
-
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
+		$svg_url = get_template_directory_uri() . "/assets/calendar.svg";
+		?>
+		<div>
+			<img class="meta-icon" src="<?php echo $svg_url; ?>">
+			<span class="posted-on">
+				<a href="<?php echo esc_url( get_permalink() ); ?>">
+					<?php echo $time_string; ?>
+				</a>
+			</span>
+		</div>
+		<?php
 	}
 endif;
 
@@ -41,14 +44,19 @@ if ( ! function_exists( 'vnbt_posted_by' ) ) :
 	 * Prints HTML with meta information for the current author.
 	 */
 	function vnbt_posted_by() {
-		$byline = sprintf(
-			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'vanilla-breeze' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
-
-		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
+		$svg_url = get_template_directory_uri() . "/assets/user.svg";
+		$author = esc_html( get_the_author() );
+		$author_url = esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );
+		?>
+		<div>
+			<img class="meta-icon" src="<?php echo $svg_url; ?>">
+			<span class="posted-by">
+				<a href="<?php echo $author_url ?>">
+					<?php echo $author; ?>
+				</a>
+			</span>
+		</div>
+		<?php
 	}
 endif;
 
