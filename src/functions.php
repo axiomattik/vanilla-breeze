@@ -100,6 +100,10 @@ if ( ! function_exists( 'vnbt_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		
+		// Add theme support for default block styles.
+		add_theme_support( 'wp-block-styles' );
 	}
 endif;
 add_action( 'after_setup_theme', 'vnbt_setup' );
