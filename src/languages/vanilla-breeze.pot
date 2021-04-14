@@ -97,48 +97,31 @@ msgstr ""
 msgid "Next:"
 msgstr ""
 
-#. translators: %s: post date.
-#: src/inc/template-tags.php:30
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr ""
-
-#. translators: %s: post author.
-#: src/inc/template-tags.php:46
-msgctxt "post author"
-msgid "by %s"
-msgstr ""
-
-#. translators: used between list items, there is a space after the comma
-#: src/inc/template-tags.php:63
-msgid ", "
-msgstr ""
-
-#. translators: 1: list of categories.
-#: src/inc/template-tags.php:66
-msgid "Posted in %1$s"
-msgstr ""
-
-#. translators: used between list items, there is a space after the comma
-#: src/inc/template-tags.php:70
-msgctxt "list item separator"
-msgid ", "
-msgstr ""
-
-#. translators: 1: list of tags.
+#. translators: used between list items, space before and after separator
 #: src/inc/template-tags.php:73
-msgid "Tagged %1$s"
+msgid " • "
 msgstr ""
 
-#. translators: %s: post title
-#: src/inc/template-tags.php:83
-msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+#. translators: used between list items, space before and after separator
+#: src/inc/template-tags.php:86
+msgctxt "list item separator"
+msgid " • "
 msgstr ""
 
-#. translators: %s: Name of current post. Only visible to screen readers
-#. translators: %s: Name of current post. Only visible to screen readers
-#: src/inc/template-tags.php:100, src/template-parts/content-page.php:39
-msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+#: src/inc/template-tags.php:114
+msgid "Leave a Comment"
+msgstr ""
+
+#: src/inc/template-tags.php:115
+msgid "1 Comment"
+msgstr ""
+
+#: src/inc/template-tags.php:116
+msgid "Read Comments"
+msgstr ""
+
+#: src/inc/template-tags.php:131
+msgid "Edit"
 msgstr ""
 
 #: src/inc/woocommerce.php:184
@@ -151,10 +134,6 @@ msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
-
-#: src/template-parts/content-excerpt.php:33, src/template-parts/content-page.php:25, src/template-parts/content.php:53
-msgid "Pages:"
-msgstr ""
 
 #: src/template-parts/content-none.php:14
 msgid "Nothing Found"
@@ -172,7 +151,11 @@ msgstr ""
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
+#: src/template-parts/content-page.php:25, src/template-parts/content.php:38
+msgid "Pages:"
+msgstr ""
+
 #. translators: %s: Name of current post. Only visible to screen readers
-#: src/template-parts/content.php:40
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+#: src/template-parts/content-page.php:39
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
