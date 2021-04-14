@@ -60,63 +60,79 @@ if ( ! function_exists( 'vnbt_posted_by' ) ) :
 	}
 endif;
 
+
+if ( ! function_exists( 'vnbt_category_tags' ) ) {
+
+	function vnbt_category_tags() {
+
+		// Hide category and tag text for pages.
+		if ( 'post' !== get_post_type() ) {
+			return;
+		}
+		/* translators: used between list items, space before and after separator*/
+		$categories_list = get_the_category_list( esc_html__( ' • ', 'vanilla-breeze' ) );
+		if ( $categories_list ) {
+			$categories_icon_url = get_template_directory_uri() . '/assets/folder.svg';
+			?>
+			<div>
+				<img class="meta-icon" src="<?php echo $categories_icon_url; ?>">
+				<span class="cat-links"><?php echo $categories_list; ?></span>
+			</div>
+			<?php
+		}
+
+
+		/* translators: used between list items, space before and after separator*/
+		$tags_list = get_the_tag_list( '', esc_html_x( ' • ', 'list item separator', 'vanilla-breeze' ) );
+		if ( $tags_list ) {
+			$tags_icon_url = get_template_directory_uri() . '/assets/tag.svg';
+			?>
+			<div class="break"></div>
+			<div>
+				<img class="meta-icon" src="<?php echo $tags_icon_url; ?>">
+				<span class="tags-links"><?php echo $tags_list; ?></span>
+			</div>
+			<?php
+		}
+
+	}
+}
+
 if ( ! function_exists( 'vnbt_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function vnbt_entry_footer() {
-		// Hide category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'vanilla-breeze' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'vanilla-breeze' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
-
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'vanilla-breeze' ) );
-			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'vanilla-breeze' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
-		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'vanilla-breeze' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post( get_the_title() )
-				)
-			);
-			echo '</span>';
+			$comment_icon_url = get_template_directory_uri() . '/assets/comment.svg';
+			?>
+			<div>
+				<img class="meta-icon" src="<?php echo $comment_icon_url; ?>">
+				<span class="comments-link">
+					<?php comments_popup_link(
+						__( 'Leave a Comment', 'vanilla-breeze' ),
+						__( '1 Comment', 'vanilla-breeze' ),
+						__( 'Read Comments', 'vanilla-breeze' ) );
+					?>
+				</span>
+			</div>
+
+			<?php
 		}
 
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'vanilla-breeze' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
+		if ( current_user_can( 'edit_posts' ) ) {
+			$edit_icon_url = get_template_directory_uri() . '/assets/edit.svg';
+			?>
+			<div class="break"></div>
+			<div>
+				<img class="meta-icon" src="<?php echo $edit_icon_url; ?>">
+				<span class="edit-link">
+					<?php edit_post_link( __( 'Edit', 'vanilla-breeze' ) ); ?>
+				</span>
+			</div>
+			<?php
+		}
 	}
 endif;
 
