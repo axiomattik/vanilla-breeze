@@ -8,6 +8,7 @@ input[type="submit"] {
 	background: $color__background-button;
 	color: rgba(0, 0, 0, 0.8);
 	line-height: 1;
+	margin: 0.5rem auto;
 	padding: 0.6em 1em 0.4em;
 
 	&:hover {
@@ -17,5 +18,42 @@ input[type="submit"] {
 	&:active,
 	&:focus {
 		border-color: $color__border-button-focus;
+	}
+}
+
+/* Button blocks (links inside a style div) */
+
+.wp-block-button {
+
+	margin: 0.5rem 0;
+	
+	// make square buttons square
+	&.is-style-squared > .wp-block-button__link {
+		border-radius: 0.2rem;
+	}
+
+	&.is-style-outline > .wp-block-button__link:hover {
+		background-color: $color__block-button;
+		color: $color__block-button-text;
+		border: solid black 2px;
+	}
+
+}
+
+.wp-block-button__link {
+
+	color: $color__block-button-text;
+	border-radius: 1.4rem;
+	min-width: 10rem;
+	background-color: $color__block-button;
+	transition: margin 0.1s;
+	
+	&:hover {
+		background-color: $color__block-button-hover;
+	}
+
+	&:active {
+		margin-top: 0.2rem;
+		margin-bottom: -0.2rem;
 	}
 }
