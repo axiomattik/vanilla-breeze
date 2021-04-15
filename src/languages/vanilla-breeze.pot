@@ -14,20 +14,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/404.php:17
-msgid "Oops! That page can&rsquo;t be found."
+msgid "Sorry! We can't find that page."
 msgstr ""
 
-#: src/404.php:21
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+#: src/404.php:22
+msgid "Return home"
 msgstr ""
 
-#: src/404.php:30
-msgid "Most Used Categories"
-msgstr ""
-
-#. translators: %1$s: smiley
-#: src/404.php:48
-msgid "Try looking in the monthly archives. %1$s"
+#. translators: this string follows 'Return home'.
+#: src/404.php:25
+msgid "try one of the links below or search."
 msgstr ""
 
 #. translators: 1: comment count number, 2: title.
@@ -46,33 +42,33 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: src/footer.php:17
+#. translators: 1: Theme name, 2: Theme author.
+#: src/footer.php:28
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: src/footer.php:33
 msgid "https://wordpress.org/"
 msgstr ""
 
 #. translators: %s: CMS name, i.e. WordPress.
-#: src/footer.php:20
+#: src/footer.php:36
 msgid "Proudly powered by %s"
-msgstr ""
-
-#. translators: 1: Theme name, 2: Theme author.
-#: src/footer.php:26
-msgid "Theme: %1$s by %2$s."
 msgstr ""
 
 #: src/functions.php:53
 msgid "Primary"
 msgstr ""
 
-#: src/functions.php:127
+#: src/functions.php:131
 msgid "Sidebar"
 msgstr ""
 
-#: src/functions.php:129
+#: src/functions.php:133
 msgid "Add widgets here."
 msgstr ""
 
-#: src/functions.php:196
+#: src/functions.php:200
 msgid "Read More"
 msgstr ""
 
@@ -80,8 +76,8 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: src/header.php:50
-msgid "Primary Menu"
+#: src/header.php:55
+msgid "Menu"
 msgstr ""
 
 #. translators: %s: search query.

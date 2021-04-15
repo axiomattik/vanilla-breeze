@@ -46,16 +46,28 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'vanilla-breeze' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+		<?php if ( has_nav_menu( 'primary' ) ): ?>
+		<?php $svg_url = get_template_directory_uri() . "/assets/hamburger.svg"; ?>
+		<div class="navigation-wrapper">
+
+			<button class="hamburger-toggle" aria-expanded="false">
+				<img class="meta-icon" src="<?php echo $svg_url; ?>">
+				<span><?php _e( 'Menu', 'vanilla-breeze' ); ?></span> 
+			</button><!-- .hamburger-toggle -->
+
+
+			<nav id="site-navigation" class="main-navigation">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'primary',
+						'menu_id'        => 'primary-menu',
+					)
+				);
+				?>
+			</nav><!-- #site-navigation -->
+
+		</div>
+		<?php endif; ?>
 	</header><!-- #masthead -->
 	<div class="site-body">

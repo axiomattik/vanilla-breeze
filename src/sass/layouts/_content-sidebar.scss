@@ -1,13 +1,16 @@
 .site {
-	margin: auto;
-	padding: 1rem 2rem;
 	display: flex;
 	flex-direction: column;
+	padding: 0;
+	margin: 0 auto;
 	max-width: 80rem;
+
 }
 
 .site-header {
+	padding: 1rem 2rem;
 	margin-bottom: 1rem;
+	max-width: 80rem;
 
 	.site-branding {
 		margin-bottom: 1rem;
@@ -64,6 +67,9 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: flex-start;
+	padding: 1rem 2rem;
+	margin-bottom: 1rem;
+	max-width: 80rem;
 }
 
 .site-main {
@@ -76,6 +82,18 @@
 }
 
 .site-footer {
+	border-top: solid #ddd 2px;
+	padding: 1rem 2rem;
+
+	.site-footer-top {
+
+	}
+
+	.site-footer-bottom {
+		display: flex;
+		justify-content: space-between;
+
+	}
 
 }
 
